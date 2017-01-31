@@ -16,7 +16,7 @@ func init() {
 func root(w http.ResponseWriter, r *http.Request) {
 	c := appengine.NewContext(r)
 	hc := urlfetch.Client(c)
-	res, err := hc.Get("https://gcpug.jp" + r.URL.Path)
+	res, err := hc.Get("https://example.com" + r.URL.Path)
 	if err != nil {
 		http.Error(w, err.Error(), http.StatusInternalServerError)
 		return
